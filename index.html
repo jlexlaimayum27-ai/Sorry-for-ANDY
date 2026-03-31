@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorry Andy ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      margin-top: 80px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.4em;
+      margin: 15px 0;
+    }
+
+    .heart {
+      font-size: 70px;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+
+    button {
+      background: #fff;
+      color: #ff4d6d;
+      border: none;
+      padding: 15px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    #extra {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.3em;
+    }
+
+    /* Floating hearts */
+    .heart-float {
+      position: absolute;
+      bottom: -10px;
+      color: rgba(255,255,255,0.7);
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-800px) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="heart">❤️</div>
+    <h1>I'm Really Sorry Andy</h1>
+
+    <p>I know I hurt you... and I truly regret it.</p>
+    <p>You are very special to me ❤️</p>
+    <p>I never wanted to lose you...</p>
+
+    <button onclick="showMessage()">Click if you still love me 💖</button>
+
+    <p id="extra">I promise I will change, understand you better, and never hurt you again. Please give me one more chance 🙏❤️</p>
+  </div>
+
+  <script>
+    function showMessage() {
+      document.getElementById('extra').style.display = 'block';
+    }
+
+    // create floating hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart-float');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>

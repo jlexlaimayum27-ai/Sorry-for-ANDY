@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Andy</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4,#fbc2eb);
+    overflow:hidden;
+}
+
+.card{
+    width:90%;
+    max-width:420px;
+    background:rgba(255,255,255,0.95);
+    padding:25px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+    animation:fadeIn 2s ease;
+}
+
+.photo{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #ff5e78;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    margin-bottom:18px;
+}
+
+h1{
+    color:#ff3d68;
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+p{
+    color:#444;
+    font-size:17px;
+    line-height:1.6;
+}
+
+.heart{
+    position:absolute;
+    color:#ff4b6e;
+    font-size:20px;
+    animation:float 6s linear infinite;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(40px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes float{
+    0%{transform:translateY(100vh) scale(0);}
+    100%{transform:translateY(-10vh) scale(1.5);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <img src="IMG_7597.jpeg" class="photo" alt="Andy">
+
+    <h1>Happy Birthday, Andy 🎂</h1>
+
+    <p>
+        Wishing you happiness, peace, and a relationship filled with love, trust, and understanding.<br><br>
+        May you and the person you truly love find the bond you both deserve.<br><br>
+        Stay blessed and take care always.
+    </p>
+</div>
+
+<script>
+for(let i=0;i<20;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(3+Math.random()*4)+"s";
+    heart.style.fontSize=(15+Math.random()*25)+"px";
+    document.body.appendChild(heart);
+}
+</script>
+
+</body>
+</html>
